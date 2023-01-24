@@ -1,0 +1,15 @@
+<script>
+    function print(texto) {
+        document.write(texto + "<br>");
+    }
+
+    var anoDeCopa = parseInt(prompt("Qual ano inicial?"));
+    var anoLimite = parseInt(prompt("Qual ano limite?"));
+
+    while(anoDeCopa <= anoLimite) {
+        print(anoDeCopa + " tem Copa!");
+        anoDeCopa = anoDeCopa + 4;
+    }
+    print("Esses são os anos de Copa até " + anoLimite + ".");
+    
+</script>

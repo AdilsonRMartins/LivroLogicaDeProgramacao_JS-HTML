@@ -1,0 +1,35 @@
+<script>
+    function nextLine () {
+        document.write("<br>");
+    }
+    function print(texto) {
+        document.write(texto);
+        nextLine();
+    }
+    function calcPontos(vitorias, empates) {
+        return (vitorias * 3) + empates;
+    }
+
+
+    var vitorias = parseInt(prompt("Quantos jogos os CDC FC venceu?"));
+    var empates = parseInt(prompt("Quantos jogos o CDC FC empatou?"));
+    var pontos = calcPontos(vitorias, empates)
+
+    var vitoriasAdversario = parseInt(prompt("Quantos jogos os adversário venceu?"));
+    var empatesAdversario = parseInt(prompt("Quantos jogos o adversario empatou?"));
+    var pontosAdversario = calcPontos(vitoriasAdversario, empatesAdversario)
+    
+
+
+    print("Nosso time tem " + pontos + " pontos.");
+
+    if(pontos > pontosAdversario) {
+        print("Nosso time está indo MELHOR que o Livros Velhos!");
+    }
+    if (pontos < pontosAdversario) {
+        print("Nosso time está indo PIOR que o Livros Velhos!");
+    }
+    if (pontos == pontosAdversario) {
+        print("Nosso time está EMPATADO com o Livros Velhos!")
+    }
+</script>

@@ -1,0 +1,33 @@
+<script>
+    function nextLine () {
+        document.write("<br>");
+    }
+    function print(texto) {
+        document.write(texto);
+        nextLine();
+    }
+    function sorteia() {
+        return Math.round(Math.random() * (100 - 1) + 1);
+    }
+    
+
+    var numeroPensado = sorteia();
+    var chute = prompt("Já pensei. Adivinhe o número que escolhi:");
+    chute = parseInt(chute);
+
+    if(isNaN(chute)) {
+        print("Digte somente números!")
+    } else {
+        if(chute == numeroPensado) {
+        print("Uau! Você acertou, eu pensei no número " + numeroPensado + ".");
+        } else {
+        print("Você errou! Eu pensei no número " + numeroPensado + ".");
+        if(chute > numeroPensado) {
+            print("Seu número é maior que o sorteado.");
+        } else {
+            print("Seu número é menor que o sorteado.");
+        }
+        }
+    }
+    
+</script>

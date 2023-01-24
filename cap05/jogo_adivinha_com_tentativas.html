@@ -1,0 +1,35 @@
+<script>
+        function nextLine () {
+        document.write("<br>");
+    }
+    function print(texto) {
+        document.write(texto);
+        nextLine();
+    }
+    function sorteia() {
+        return Math.round(Math.random() * 10);
+    }
+
+
+    var numeroPensado = sorteia();
+    var numTentativa = 1;
+
+    while(numTentativa <= 3) {
+    var chute = parseInt(prompt("Já pensei. Adivinhe o número que escolhi:"));
+    numTentativa++;
+
+    if(chute < numeroPensado) {
+        var dica = "menor";
+    } else {
+        var dica = "maior";
+    }
+
+    if(chute == numeroPensado) {
+        alert("Acertou");
+        break;
+    } else {
+        alert("Errou! Seu número é " + dica + " que o número pensado.");
+    }
+    }
+
+</script>

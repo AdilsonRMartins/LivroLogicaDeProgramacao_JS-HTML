@@ -1,0 +1,32 @@
+<script>
+    function nextLine () {
+        document.write("<br>");
+    }
+    function print(texto) {
+        document.write(texto);
+        nextLine();
+    }
+    function calcImc(peso, altura) {
+        var imc = (peso / (altura * altura)).toFixed(1);
+        return imc;
+    }
+
+    var nome = prompt("Olá, qual o seu nome?");
+    var altura = prompt(nome + ", qual é a sua altura?");
+    var peso = prompt(nome + ", qual é o seu peso?");
+    var imcDoUser = calcImc(peso, altura);
+
+    print(nome + ", seu IMC é: " + calcImc(peso, altura));
+    nextLine();
+    print("Você está " + (calcImc(peso, altura) - 18.5).toFixed(1) + " pontos acima da linha da magreza.");
+    print("Você está " + (35 - calcImc(peso, altura)).toFixed(1) + " pontos abaixo da linha de obesidade.");
+    if(imcDoUser < 18.5) {
+        print("Seu IMC indica que você está ABAIXO do peso.");
+    }
+    if(imcDoUser > 35) {
+        print("Seu IMC indica que você está ACIMA do peso.");
+    }
+    if(imcDoUser >= 18.5 && imcDoUser <= 35) {
+        print("Seu IMC está dentro dos limites.");
+    }
+</script>
