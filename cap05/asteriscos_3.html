@@ -1,0 +1,25 @@
+<script>
+    function nextLine() {
+        document.write("<br>");
+    }
+    function print(texto) {
+        document.write(texto);
+    }
+
+    
+    var qtdLin = 10;
+    var qtdCol = 20;
+
+    for (var linha = 1; linha <= qtdLin; linha++) {
+        for (var coluna = 1; coluna < qtdCol; coluna++) {
+            if ((coluna == linha) || (coluna == qtdCol - linha)) {
+                print("*");
+            }
+            else {
+                print("_");
+            }
+        }
+        nextLine();
+    }
+
+</script>
