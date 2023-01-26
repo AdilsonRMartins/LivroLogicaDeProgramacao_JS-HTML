@@ -1,0 +1,42 @@
+<input type="text" id="numero">
+<input type="submit" id="verificar" value="Adicione 6 números">
+<input type="submit" id="resultado" value="Veja o resultado do seu jogo">
+
+<script>
+    function testaAcerto() {
+        for (var i = 0; i < numEscolhidos.length; i = i + 1) {
+            var teste = numEscolhidos[i];
+            for (var j = 0; j < jogoSorteado.length; j = j + 1) {
+                if (teste == jogoSorteado[j]) {
+                    document.write("<br>Acertou o número " + teste + "!");
+                }
+            }
+        }
+    }
+    function adicionarNumEscolhido() {
+        var numero = document.getElementById("numero").value;
+        for (var i = 0; i < numEscolhidos.length; i = i + 1) {
+            if (numEscolhidos[i] == numero) {
+                alert("Número já escolhido!");
+                caixaDoNumero.value = "";
+                return;
+            }
+        }
+        numEscolhidos.push(numero);
+        caixaDoNumero.value = "";
+    }
+
+
+    var jogoSorteado = [];
+    for (var i = 0; i < 6; i = i + 1) {
+        var numSorteado = Math.round(Math.random() * (60 - 1) + 1);
+        jogoSorteado[i] = numSorteado;
+    }
+    var numEscolhidos = [];
+    var caixaDoNumero = document.getElementById("numero");
+    var botaoAdivinhar = document.getElementById("verificar");
+    var botaoResultado = document.getElementById("resultado");
+    botaoAdivinhar.onclick = adicionarNumEscolhido;
+    botaoResultado.onclick = testaAcerto;
+
+</script>

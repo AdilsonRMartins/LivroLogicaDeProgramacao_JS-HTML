@@ -1,0 +1,28 @@
+<input type="text" id="numero">
+<input type="submit" id="verificar" value="Adicione e verifique o bingo!">
+
+<script>
+    function adicionarSorteado () {
+        var numero = document.getElementById("numero").value;
+        for (var i = 0; i < sorteados.length; i = i + 1) {
+            if (sorteados[i] == numero) {
+                alert("Número já sorteado!");
+                caixaDoNumero.value = "";
+                return
+            }
+        }
+        sorteados.push(numero);
+        console.log(sorteados);
+        caixaDoNumero.value = "";
+    }
+    
+
+    var sorteados = [];
+    var caixaDoNumero = document.getElementById("numero");
+    var botaoAdivinhar = document.getElementById("verificar");
+    botaoAdivinhar.onclick = adicionarSorteado;
+
+    console.log(sorteados);
+
+
+</script>
