@@ -1,0 +1,17 @@
+<canvas id="tela" width="600" height="400"></canvas>
+<script>
+    var tela = document.getElementById("tela");
+    var c = tela.getContext("2d");
+
+    c.fillStyle = "darkorange";
+    c.fillRect(0, 0, 600, 135);
+
+    c.fillStyle = "forestgreen";
+    c.fillRect(0, 265, 600, 135);
+
+    c.fillStyle = "darkorange";
+    c.beginPath();
+    c.arc(300, 200, 55, 0, 2 * 3.14);
+    c.fill();
+
+</script>
